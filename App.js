@@ -280,13 +280,16 @@
   // Draw QR on canvas
   // ─────────────────────────────────────────────────────────────────
   function drawQR(canvas, text) {
-    var qr = QR.create(text);
+    var qr    = QR.create(text);
     var count = qr.getModuleCount();
-    var size  = canvas.width;
-    var cell  = Math.floor(size / (count + 2));
-    var offset = Math.floor((size - cell * count) / 2);
+    var quiet = 4; // quiet zone modules
+    var total = count + quiet * 2;
+    var cell  = Math.floor(canvas.width / total);
+    var size  = cell * total;
+    canvas.width  = size;
+    canvas.height = size;
+    var offset = quiet * cell;
     var ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, size, size);
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, size, size);
     for (var row = 0; row < count; row++) {
