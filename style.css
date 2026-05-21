@@ -1,0 +1,492 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #1D9E75;
+  --green-dark: #0F6E56;
+  --green-light: #E1F5EE;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-tertiary: #888;
+  --border: #e2e2e2;
+  --border-medium: #ccc;
+  --bg-page: #f7f6f3;
+  --bg-card: #ffffff;
+  --bg-surface: #f2f0ec;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+/* ── Header ── */
+.brand {
+  text-align: center;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.brand-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* ── Section label ── */
+.section-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* ── Item list ── */
+.item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.55;
+}
+
+.check {
+  color: var(--green);
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+.assist-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* ── Prices ── */
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.price-item {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.price-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+
+.price-value {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.price-note {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 3px;
+}
+
+.total-bar {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.total-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.total-amount {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.total-note {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 10px;
+}
+
+/* ── Contract button ── */
+.contract-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 0.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.contract-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-medium);
+}
+
+.btn-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.btn-text {
+  flex: 1;
+}
+
+.btn-text strong {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-text span {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.btn-arrow {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+/* ── PIX card ── */
+.pix-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pix-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.pix-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-secondary);
+}
+
+.pix-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.pix-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+/* ── PIX options ── */
+.pix-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.pix-opt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  text-align: left;
+}
+
+.pix-opt:hover {
+  background: #eae8e3;
+}
+
+.pix-opt.active {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+
+.opt-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.pix-opt.active .opt-label {
+  color: var(--green-dark);
+}
+
+.opt-value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pix-opt.active .opt-value {
+  color: var(--green);
+}
+
+/* ── Generate button ── */
+.generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.generate-btn:hover {
+  background: var(--green-dark);
+}
+
+.generate-btn:active {
+  transform: scale(0.99);
+}
+
+/* ── PIX result ── */
+.pix-result {
+  display: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border);
+  animation: fadeIn 0.2s ease;
+}
+
+.pix-result.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.qr-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.qr-box {
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.qr-box canvas {
+  display: block;
+}
+
+.copy-block {
+  flex: 1;
+  min-width: 200px;
+}
+
+.copy-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+.code-box {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  line-height: 1.7;
+  font-family: monospace;
+  max-height: 90px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: var(--bg-card);
+  border: 0.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: var(--bg-surface);
+}
+
+.copy-success {
+  color: var(--green);
+  font-size: 12px;
+  margin-top: 7px;
+  display: none;
+  font-weight: 500;
+}
+
+.pix-beneficiary {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  border-top: 0.5px solid var(--border);
+  margin-top: 2rem;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .brand-logo {
+    font-size: 24px;
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .total-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .qr-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .copy-block {
+    width: 100%;
+  }
+}
